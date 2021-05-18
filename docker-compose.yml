@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  flask_app:
+    build: '.'
+    restart: always
+    ports:
+      - "8000:8000"
+    command: bash -c "gunicorn -c python:gunicorn_conf app.report_service:app"
+    depends_on:
+      - redis
+
+  task_queue:
+    build: '.'
+    restart: always
+    command: bash -c "celery -A celery_queue.tasks_queue worker --loglevel=INFO"
+    depends_on:
+      - redis
+      - flask_app
+
+  redis:
+    image: 'redis:4-alpine'
+    restart: always
+    ports:
+      - '6379:6379'

@@ -1,0 +1,8 @@
+[all]:
+    mysetting: "PyBootcampCondaOmlevi"
+  
+[prod]:
+    mysetting: "PyBootcampCondaOmlevi-prod"
+  
+[test]:
+    mysetting: "PyBootcampCondaOmlevi-test"
