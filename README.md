@@ -6,6 +6,7 @@ to schedule queries and send their result in various formats
 
 ## Technology:
 Python development: Flask, Gunicorn, Celery, Conda, design patterns, sqlalchemy(ORM), OOP, third party API's
+
 Other tools: Html, Css, Docker, Redis
 
 ## Model:
